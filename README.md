@@ -111,3 +111,4 @@ Generating a licence
 
 ### Example
 ### Docs
+You can refer to [documentation](https://sajed-zarrinpour.github.io/docs.spotplayer/) for further information.
