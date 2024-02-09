@@ -1,6 +1,6 @@
 <?php
 
-// use SajedZarinpour\Spotplayer\Facades\SpotPlayer;
+// use SajedZarinpour\SpotPlayer\Facades\SpotPlayer;
 
 test('get course detail', function ($courseId) {
     

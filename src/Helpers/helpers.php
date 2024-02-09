@@ -1,6 +1,6 @@
 <?php
 
-use SajedZarinpour\Spotplayer\SpotPlayer;
+use SajedZarinpour\SpotPlayer\SpotPlayer;
 /**
  * Adding helper functionality to the package. The following calls are equivalent.
  * ```

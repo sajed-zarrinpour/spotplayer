@@ -1,13 +1,13 @@
 <?php
 
-namespace SajedZarinpour\Spotplayer\Controllers;
+namespace SajedZarinpour\SpotPlayer\Controllers;
 
 use Illuminate\Http\Request;
 // use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cookie;
 
-use SajedZarinpour\Spotplayer\Facades\SpotPlayer;
+use SajedZarinpour\SpotPlayer\Facades\SpotPlayer;
 
 class SpotPlayerController extends Controller
 {

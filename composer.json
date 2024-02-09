@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SajedZarinpour\\Spotplayer\\": "src/"
+            "SajedZarinpour\\SpotPlayer\\": "src/"
         },
         "files": [
             "src/Helpers/helpers.php"
@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SajedZarinpour\\SpotPlayer\\SpotPlayerServiceProvider"
+                "SajedZarinpour\\SpotPlayer\\Providers\\SpotPlayerServiceProvider"
             ],
             "aliases": {
                 "SpotPlayer": "SajedZarinpour\\SpotPlayer\\Facades\\SpotPlayer"

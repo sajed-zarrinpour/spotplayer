@@ -1,6 +1,6 @@
 <?php
 
-namespace SajedZarinpour\Spotplayer\Facades;
+namespace SajedZarinpour\SpotPlayer\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

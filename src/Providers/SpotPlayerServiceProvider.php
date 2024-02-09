@@ -1,10 +1,10 @@
 <?php
 
-namespace SajedZarinpour\Spotplayer\Providers;
+namespace SajedZarinpour\SpotPlayer\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-use SajedZarinpour\Spotplayer\SpotPlayer;
+use SajedZarinpour\SpotPlayer\SpotPlayer;
 
 class SpotPlayerServiceProvider extends ServiceProvider
 {
@@ -14,7 +14,7 @@ class SpotPlayerServiceProvider extends ServiceProvider
     public function register(): void
     {
         /** registering the controller */ 
-        $this->app->make('SajedZarinpour\Spotplayer\Controllers\SpotPlayerController');
+        $this->app->make('SajedZarinpour\SpotPlayer\Controllers\SpotPlayerController');
 
         /** binding the spotplayer */
         $this->app->bind('spot-player', function(){

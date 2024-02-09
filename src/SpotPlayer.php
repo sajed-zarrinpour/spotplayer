@@ -1,5 +1,5 @@
 <?php
-namespace SajedZarinpour\Spotplayer;
+namespace SajedZarinpour\SpotPlayer;
 
 class SpotPlayer{
   /**
