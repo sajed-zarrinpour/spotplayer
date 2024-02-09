@@ -3,7 +3,6 @@
 namespace SajedZarinpour\SpotPlayer\Controllers;
 
 use Illuminate\Http\Request;
-// use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cookie;
 
@@ -25,7 +24,7 @@ class SpotPlayerController extends Controller
      * 
      * @param Illuminate\Http\Request $request
      * 
-     * @return Illuminate\Http\Response $response 
+     * @return Illuminate\Http\Response  
      */
     public function generateCookie(Request $request){
         

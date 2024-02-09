@@ -1,17 +1,17 @@
 {
     "name": "sajed-zarinpour/spotplayer",
-    "description": "A wrapper for spotplayer.ir video service (DRM) API",
+    "description": "A wrapper for spotplayer.ir video service (DRM) API.",
     "license": "MIT",
     "type": "library",
     "keywords": [
         "library",
         "spotplayer"
     ],
-    "homepage": "https://github.com/sajed-zarrinpour/spotplayer",
+    "homepage": "https://github.com/sajed-zarrinpour/spotplayer/",
     "support": {
         "issues": "https://github.com/sajed-zarrinpour/spotplayer/issues",
-        "source": "https://github.com/sajed-zarrinpour/spotplayer",
-        "docs": "https://docs.mockery.io/",
+        "source": "https://github.com/sajed-zarrinpour/spotplayer/",
+        "docs": "https://sajed-zarrinpour.github.io/docs.spotplayer/",
         "rss": "https://github.com/sajed-zarrinpour/spotplayer/releases.atom",
         "security": "https://github.com/sajed-zarrinpour/spotplayer/security/advisories"
     },
