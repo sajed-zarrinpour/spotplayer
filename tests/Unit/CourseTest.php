@@ -20,7 +20,7 @@ test('get course detail', function ($courseId) {
 dataset('provide_getCourseDetail_data', function () {
     return [
         [
-            '65a3a603928f44f9deff1b4c',
+            'courseId',
         ]
     ];
 });
