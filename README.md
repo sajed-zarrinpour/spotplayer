@@ -12,7 +12,7 @@ Step 1:
 
 Install the package using Composer:
 
-    composer require sajed-zarrinpour/spotplayer
+    composer require sajed-zarinpour/spotplayer
 
 Step 2:
 
