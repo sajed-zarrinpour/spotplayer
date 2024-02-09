@@ -12,7 +12,7 @@ return [
     | This value is your API KEY from spotplayer.ir.
     |
     */
-    'api' => env('SPOTPLAYER_API','ZZ+sm5KPRPne81Da/NGBsFz13hA='),
+    'api' => env('SPOTPLAYER_API','your api key'),
     
     /*
     |--------------------------------------------------------------------------
