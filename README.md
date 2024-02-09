@@ -108,6 +108,18 @@ Generating a licence
     dump('licence URL is:' . $licence['url']);
     
     die;
+    
+> [!NOTE]
+> To generate cookie **X**, if you are serving on a localhost machine, make sure you run your Laravel program using:
+> ```
+>     php artisan serve --host=localhost
+> ```
+> Otherwise **the cookie won't set**.
+> Moreover, make sure Laravel won't encrypt the cookie **X** by adding
+> ``` 
+>    protected $except = ['X'];
+> ```
+> to the _$except_ array in **Midllware/EncryptCookies**.
 
 ### Testing
 The package is using [pest](https://pestphp.com) for testing. Make sure that you are setting the `Pest.php` correctly
