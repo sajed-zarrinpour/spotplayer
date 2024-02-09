@@ -12,7 +12,7 @@ Step 1:
 
 Install the package using Composer:
 
-    composer require sajed-zarrinpour/spotplayer
+    composer require sajed-zarinpour/spotplayer
 
 Step 2:
 
@@ -109,6 +109,13 @@ Generating a licence
     
     die;
 
+### Testing
+The package is using [pest](https://pestphp.com) for testing. Make sure that you are setting the `Pest.php` correctly
+```
+uses(
+    Tests\TestCase::class,
+)->in('Unit', 'Feature');
+```
 ### Example
 ### Docs
 You can refer to [documentation](https://sajed-zarrinpour.github.io/docs.spotplayer/) for further information.
