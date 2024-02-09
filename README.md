@@ -18,7 +18,7 @@ Step 2:
 
 Publish the config file of the package using the following command
 
-    php artisan vendor:publish --provider="SajedZarinpour\Spotplayer\Providers\SpotPlayerServiceProvider"
+    php artisan vendor:publish --provider="SajedZarinpour\SpotPlayer\Providers\SpotPlayerServiceProvider"
 
 Step 3:
 
