@@ -1,7 +1,7 @@
 spotplayer
 ==========
 
-A Laravel wrapper for spotplayer.ir video service (DRM) API
+Laravel wrapper for spotplayer.ir video service (DRM) API
 -----------------------
 
 This package provides an API wrapper for [spotplayer.ir](https://spotplayer.ir) website. Spotplayer is a video-sharing website for teachers that provides a way to stream their video on either their website or the Spotplayer application (which is available for Windows, MacOS, Ubuntu, IOS, and Android) that ensures the copyrighting of their content. 
