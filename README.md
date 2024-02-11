@@ -126,7 +126,7 @@ The package is using [pest](https://pestphp.com) for testing. Make sure that you
 ```
 uses(
     Tests\TestCase::class,
-)->in('Unit', 'Feature');
+)->in('Feature', '../vendor/sajed-zarinpour/spotplayer/tests');
 ```
 
 ### Example
