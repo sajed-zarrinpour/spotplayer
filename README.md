@@ -129,6 +129,16 @@ uses(
 )->in('Feature', '../vendor/sajed-zarinpour/spotplayer/tests');
 ```
 
+Moreover, open ```vendor/sajed-zarinpour/spotplayer/tests/Unit/CourseTest.php``` and edit the file to use one of your course data.
+```
+dataset('provide_getCourseDetail_data', function () {
+    return [
+        [
+            'put your spotplayer course id here!',
+        ]
+    ];
+});
+```
 ### Example
 You can refer to [laravel minimal example](https://github.com/sajed-zarrinpour/spotplayer-example) for a minimal example.
 
