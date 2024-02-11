@@ -1,7 +1,7 @@
 spotplayer
 ==========
 
-A wrapper for spotplayer.ir video service (DRM) API
+Laravel wrapper for spotplayer.ir video service (DRM) API
 -----------------------
 
 This package provides an API wrapper for [spotplayer.ir](https://spotplayer.ir) website. Spotplayer is a video-sharing website for teachers that provides a way to stream their video on either their website or the Spotplayer application (which is available for Windows, MacOS, Ubuntu, IOS, and Android) that ensures the copyrighting of their content. 
@@ -126,8 +126,21 @@ The package is using [pest](https://pestphp.com) for testing. Make sure that you
 ```
 uses(
     Tests\TestCase::class,
-)->in('Unit', 'Feature');
+)->in('Feature', '../vendor/sajed-zarinpour/spotplayer/tests');
+```
+
+Moreover, open ```vendor/sajed-zarinpour/spotplayer/tests/Unit/CourseTest.php``` and edit the file to use one of your course data.
+```
+dataset('provide_getCourseDetail_data', function () {
+    return [
+        [
+            'put your spotplayer course id here!',
+        ]
+    ];
+});
 ```
 ### Example
+You can refer to [laravel minimal example](https://github.com/sajed-zarrinpour/spotplayer-example) for a minimal example.
+
 ### Docs
 You can refer to [documentation](https://sajed-zarrinpour.github.io/docs.spotplayer/) for further information.
