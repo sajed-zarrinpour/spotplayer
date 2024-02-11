@@ -266,5 +266,25 @@ class SpotPlayer{
     ]);
   }
 
+  /**
+   * Checking the validity of a licence.
+   * 
+   * @param string $licenceId the licence to verify
+   * 
+   * @return bool validity of the licence.
+   */
+  public function licenceIsValid(string $licenceId) : bool
+    {
+        $licenceData = $this->getLicenseData($licenceId);
+        if(is_array($licenceData)){
+            if(array_key_exists("_id",$licenceData)){
+                if($licenceData['_id'] === $licenceId){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
 
