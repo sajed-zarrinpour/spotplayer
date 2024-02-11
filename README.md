@@ -128,6 +128,9 @@ uses(
     Tests\TestCase::class,
 )->in('Unit', 'Feature');
 ```
+
 ### Example
+You can refer to [laravel minimal example](https://github.com/sajed-zarrinpour/spotplayer-example) for a minimal example.
+
 ### Docs
 You can refer to [documentation](https://sajed-zarrinpour.github.io/docs.spotplayer/) for further information.
