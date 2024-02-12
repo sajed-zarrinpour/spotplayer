@@ -111,12 +111,12 @@ Generating a licence
 > [!NOTE]
 > To generate cookie **X**, if you are serving on a localhost machine, make sure you run your Laravel program using:
 > ```
->     php artisan serve --host=localhost
+> php artisan serve --host=localhost
 > ```
 > Otherwise **the cookie won't set**.
 > Moreover, make sure Laravel won't encrypt the cookie **X** by adding
 > ``` 
->    protected $except = ['X'];
+> protected $except = ['X'];
 > ```
 > to the _$except_ array in **Midllware/EncryptCookies**.
 
