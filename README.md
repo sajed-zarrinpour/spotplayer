@@ -57,7 +57,6 @@ and
     
     use Illuminate\Http\Request;
     
-    use SajedZarinpour\Spotplayer\Facades\SpotPlayer;
     
     class SpotPlayerController extends Controller
     {
