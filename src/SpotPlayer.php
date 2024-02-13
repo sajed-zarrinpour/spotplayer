@@ -1,5 +1,6 @@
 <?php
 namespace SajedZarinpour\SpotPlayer;
+use SajedZarinpour\SpotPlayer\Exceptions\ValueOutOfRangeException;
 
 class SpotPlayer{
   /**
@@ -187,7 +188,7 @@ class SpotPlayer{
     }
     if ($WebApp < 0 || $WebApp > 99 ) 
     {
-      throw new \Exception('The parameter $WebApp is out of range (0-99).');
+      throw new ValueOutOfRangeException('$WebApp');
     }
     
     $device = [
