@@ -1,6 +1,8 @@
 <?php
 namespace SajedZarinpour\SpotPlayer;
 use SajedZarinpour\SpotPlayer\Exceptions\ValueOutOfRangeException;
+use SajedZarinpour\SpotPlayer\Exceptions\SpotPlayerReturnedException;
+use SajedZarinpour\SpotPlayer\Exceptions\licenseIsNotValidException;
 
 class SpotPlayer{
   /**
@@ -88,7 +90,7 @@ class SpotPlayer{
     if ($options) curl_setopt($c, CURLOPT_POSTFIELDS, json_encode($this->filter($options)));
     $json = json_decode(curl_exec($c), true);
     curl_close($c);
-    if (is_array($json) && ($ex = @$json['ex'])) throw new \Exception($ex['msg']);
+    if (is_array($json) && ($ex = @$json['ex'])) throw new SpotPlayerReturnedException($ex['msg']);
     return $json;
   }
 
@@ -111,9 +113,9 @@ class SpotPlayer{
    * 
    * @param void
    * 
-   * @return array A list of all the licences generated with this api key.
+   * @return array A list of all the licenses generated with this api key.
    */
-  public function getAllLicences() : array
+  public function getAlllicenses() : array
   {
     return $this->request('https://panel.spotplayer.ir/license/?p=0', null);
   }
@@ -145,7 +147,7 @@ class SpotPlayer{
   /**
    * To set up the $device array in a convinient way.
    * 
-   * If you wish to set up a specific device set up for a licence you can use this function to create the array in a conviniet way.
+   * If you wish to set up a specific device set up for a license you can use this function to create the array in a conviniet way.
    * 
    * @see config('spotplayer.device') Read the doc on package config file for more information. 
    * 
@@ -157,34 +159,34 @@ class SpotPlayer{
    * @param int $IOS default value: 0
    * @param int $WebApp default value: 0
    * 
-   * @return array The _device_ array to use in licence generation.
+   * @return array The _device_ array to use in license generation.
    */
   public function setDevice($numberOfAllowedActiveDevices, $Windows=0, $MacOS=0, $Ubuntu=0, $Android=0, $IOS=0, $WebApp=0) : array
   {
 
     if ($numberOfAllowedActiveDevices < 0 || $numberOfAllowedActiveDevices > 99 ) 
     {
-      throw new \Exception('The parameter $numberOfAllowedActiveDevices is out of range (0-99).');
+      throw new ValueOutOfRangeException('$numberOfAllowedActiveDevices');
     }
     if ($Windows < 0 || $Windows > 99 ) 
     {
-      throw new \Exception('The parameter $Windows is out of range (0-99).');
+      throw new ValueOutOfRangeException('$Windows');
     }
     if ($MacOS < 0 || $MacOS > 99 ) 
     {
-      throw new \Exception('The parameter $MacOS is out of range (0-99).');
+      throw new ValueOutOfRangeException('$MacOS');
     }
     if ($Ubuntu < 0 || $Ubuntu > 99 ) 
     {
-      throw new \Exception('The parameter $Ubuntu is out of range (0-99).');
+      throw new ValueOutOfRangeException('$Ubuntu');
     }
     if ($Android < 0 || $Android > 99 ) 
     {
-      throw new \Exception('The parameter $Android is out of range (0-99).');
+      throw new ValueOutOfRangeException('$Android');
     }
     if ($IOS < 0 || $IOS > 99 ) 
     {
-      throw new \Exception('The parameter $IOS is out of range (0-99).');
+      throw new ValueOutOfRangeException('$IOS');
     }
     if ($WebApp < 0 || $WebApp > 99 ) 
     {
@@ -205,19 +207,19 @@ class SpotPlayer{
   }
 
   /**
-   * generate a spotplayer licence for the given values.
+   * generate a spotplayer license for the given values.
    * 
-   * @param string $name the name of the person this licence should issued to.
-   * @param array $courses the courses that this licence covers.
+   * @param string $name the name of the person this license should issued to.
+   * @param array $courses the courses that this license covers.
    * @param string $watermark your watermark text.
    * @param string test
    * 
    * @return array The array consists of these keys:
    * * _id Created License ID,
    * * key License Key,
-   * * url downloadable licence speciefic url (extending https://dl.spotplayer.ir/, ends with file type).
+   * * url downloadable license speciefic url (extending https://dl.spotplayer.ir/, ends with file type).
    */
-  public function licence($name, $courses, $watermarks, $device=null, $payload=null) : array 
+  public function license($name, $courses, $watermarks, $device=null, $payload=null) : array 
   {
     if ($device = null) {
       $device = config('spotplayer.device');
@@ -238,11 +240,11 @@ class SpotPlayer{
   }
 
   /**
-   * Get a licence description.
+   * Get a license description.
    * 
    * @param string $licenseId
    * 
-   * @return array Get the detail of a licence.
+   * @return array Get the detail of a license.
    */
   public function getLicenseData($licenseId) : array
   {
@@ -250,16 +252,19 @@ class SpotPlayer{
   }
 
   /**
-   * Update a spotplayer licence for the given values.
+   * Update a spotplayer license for the given values.
    * 
-   * @param string $name the name of the person this licence should issued to.
-   * @param array $data the data of the video including licence limits.
-   * @param array $device specifies which device is covered with this licence. 
+   * @param string $name the name of the person this license should issued to.
+   * @param array $data the data of the video including license limits.
+   * @param array $device specifies which device is covered with this license. 
    * 
-   * @return string The id of the licence which was affected by the update.
+   * @return string The id of the license which was affected by the update.
    */
   public function updateLicense($licenseId, $name, $data, $device) : string 
   {
+    if (!$this->licenseIsValid($licenseId)) {
+      throw new licenseIsNotValidException('$licenseId');
+    }
     return $this->request('https://panel.spotplayer.ir/license/edit/'.$licenseId, [
       'name'=>$name,
       'data' => $data,
@@ -268,18 +273,18 @@ class SpotPlayer{
   }
 
   /**
-   * Checking the validity of a licence.
+   * Checking the validity of a license.
    * 
-   * @param string $licenceId the licence to verify
+   * @param string $licenseId the license to verify
    * 
-   * @return bool validity of the licence.
+   * @return bool validity of the license.
    */
-  public function licenceIsValid(string $licenceId) : bool
+  public function licenseIsValid(string $licenseId) : bool
     {
-        $licenceData = $this->getLicenseData($licenceId);
-        if(is_array($licenceData)){
-            if(array_key_exists("_id",$licenceData)){
-                if($licenceData['_id'] === $licenceId){
+        $licenseData = $this->getLicenseData($licenseId);
+        if(is_array($licenseData)){
+            if(array_key_exists("_id",$licenseData)){
+                if($licenseData['_id'] === $licenseId){
                     return true;
                 }
             }

@@ -3,10 +3,10 @@
 namespace SajedZarinpour\SpotPlayer\Exceptions;
 use Exception;
 
-class ValueOutOfRangeException extends Exception
+class LicenceIsNotValidException extends Exception
 {
     public function __construct(string $message) {
-       $this->message = 'Error on line '.$this->getLine().' in '.$this->getFile().' : The parameter '.$message.' is not a valid licence.';
+       $this->message = 'Error on line '.$this->getLine().' in '.$this->getFile().' : The parameter '.$message.' is out of range (0-99).';
     }
 
     // public function errorMessage() {
