@@ -138,6 +138,11 @@ dataset('provide_getCourseDetail_data', function () {
     ];
 });
 ```
+Run the following to run the test
+```
+./vendor/bin/pest vendor/sajed-zarinpour/spotplayer/tests/
+```
+
 ### Example
 You can refer to [laravel minimal example](https://github.com/sajed-zarrinpour/spotplayer-example) for a minimal example.
 
