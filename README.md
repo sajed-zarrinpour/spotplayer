@@ -103,7 +103,7 @@ Generating a licence
     );
     
     dump('licence id is:' . $licence['_id']);
-    dump('licence key is:' . $license['key']);
+    dump('licence key is:' . $licence['key']);
     dump('licence URL is:' . $licence['url']);
     
     die;

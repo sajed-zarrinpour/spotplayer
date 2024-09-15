@@ -225,7 +225,7 @@ class SpotPlayer{
       $device = config('spotplayer.device');
     }
 
-    if(!is_array($watermark)){
+    if(!is_array($watermarks)){
       $watermarks = ['texts' => array_map(function ($w) { return ['text' => $w]; }, $watermarks)];
     }
     
